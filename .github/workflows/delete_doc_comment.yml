@@ -1,13 +1,14 @@
-name: Delete dev documentation
+name: Delete dev documentation (artifact)
 
 on:
-  pull_request_target:
-    types: [ closed ]
+  workflow_run:
+    workflows: ["Delete dev documentation trigger"]
+    types:
+      - completed
 
 
 jobs:
   delete:
     uses: huggingface/doc-builder/.github/workflows/delete_doc_comment.yml@fix-token-issue
-    with:
-      pr_number: ${{ github.event.number }}
-      package: accelerate
+    secrets:
+      comment_bot_token: ${{ secrets.COMMENT_BOT_TOKEN }}
