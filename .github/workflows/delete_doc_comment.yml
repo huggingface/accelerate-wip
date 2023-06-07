@@ -11,4 +11,4 @@ jobs:
   delete:
     uses: huggingface/doc-builder/.github/workflows/delete_doc_comment.yml@fix-token-issue
     secrets:
-      comment_bot_token: ${{ secrets.COMMENT_TOKEN }}
+      comment_bot_token: ${{ secrets.COMMENT_BOT_TOKEN }}

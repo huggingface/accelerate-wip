@@ -13,4 +13,4 @@ jobs:
       package_name: accelerate
     secrets:
       hf_token: ${{ secrets.HF_DOC_BUILD_PUSH }}
-      comment_bot_token: ${{ secrets.COMMENT_TOKEN }}
+      comment_bot_token: ${{ secrets.COMMENT_BOT_TOKEN }}
